@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useContext } from 'react';
 import './MainSlider.module.css';
 import cover from '../../assets/shopping-bag-cart.jpg'
 import { OtherContext } from '../CartContext/OtherContext';
+import { Link } from 'react-router-dom';
 
 export default function MainSlider() {
  
@@ -10,29 +11,27 @@ export default function MainSlider() {
     
 return (
     <>
+  <div data-theme={dar} className="dark:bg-black">
+    <div className="relative overflow-hidden h-[32rem] flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 shadow-sm transition hover:shadow-lg">
+      <div className="relative text-center px-6 sm:px-12 lg:px-24 max-w-3xl">
+        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-white drop-shadow-lg">
+          Welcome to My E-commerce Store
+        </h1>
+        <p className="mt-4 text-lg sm:text-xl text-white/90 font-medium leading-relaxed">
+          Discover a world of shopping convenience and style. Explore fashion, electronics, and more with secure payments, fast delivery, and exclusive deals made just for you.
+        </p>
 
-    <div data-theme={dar} className='dark:bg-black'>
-    <div className="relative overflow-hidden h-120 rounded-lg dark:bg-black shadow-sm transition hover:shadow-lg ">
-  <img
-    alt=""
-    src={cover}
-    className="absolute inset-0 w-full   object-cover"
-  />
-
-  <div className="relative bg-gradient-to-t from-gray-950/100 to-gray-950/10 pt-32 sm:pt-48 lg:pt-64 h-full">
-    <div className="p-4 sm:p-6">
-
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-        Welcome to My E-commerce Store
-      </h1>
-      <p className="mt-2 line-clamp-3  text-white/95 font-bold w-1/2">
-           Welcom to My New Ecommerce Website! Discover a world of shopping convenience and style. Explore our wide range of products, from fashion to electronics, all at your fingertips. Enjoy seamless browsing, secure payments, and fast delivery. Join us today and elevate your shopping experience with exclusive deals and personalized recommendations. Happy shopping!
-      </p>
+        <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+           <Link to="/products">
+          <button className="px-6 py-3 rounded-2xl bg-white text-indigo-700 font-bold shadow hover:text-indigo-400 hover:bg-teal-700 transition ">
+          Shop Now
+          </button>
+          </Link>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-    </div>
-    </>
+  </div>
+</>
   )
 }
 
